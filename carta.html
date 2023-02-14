@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+</head>
+
+<body>
+
+    <img src="retro.jpg" onclick="gira()" />
+    <img class="card" src="retro.jpg" onclick="gira2()" />
+
+
+    <script>
+        let carta = document.querySelector("img")
+
+        function gira() {
+            if (carta.src.includes('retro'))
+                carta.src = "fronte.jpg"
+            else
+                carta.src = "retro.jpg"
+        }
+       
+        let card = document.querySelector(".card")
+
+        function gira2() {
+            if (card.src.includes('retro'))
+                card.src = "https://cards.scryfall.io/large/front/2/b/2b73d294-6ab1-4051-9b0f-d8e335d37674.jpg?1626097096"
+            else
+                card.src = "retro.jpg"
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
