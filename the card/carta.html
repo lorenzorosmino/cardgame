@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+
 </head>
 
+
 <body>
+
+
     <img src="retro.jpg" onclick="gira()" />
+    <img class="card" src="retro.jpg" onclick="gira2()" />
+
+
+
 
     <script>
         let carta = document.querySelector("img")
-        function gira() {
 
-            if (carta.src.includes("retro"))
+
+        function gira() {
+            if (carta.src.includes('retro'))
                 carta.src = "fronte.jpg"
             else
                 carta.src = "retro.jpg"
         }
+       
+        let card = document.querySelector(".card")
+
+
+        function gira2() {
+            if (card.src.includes('retro'))
+                card.src = "https://www.denofgeek.com/wp-content/uploads/2021/07/afr-23-loyal-warhound.jpg"
+            else
+                card.src = "retro.jpg"
+        }
+
+
+
+
+
 
     </script>
+
+
 </body>
 
+
 </html>
+
