@@ -1,53 +1,119 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
 
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 
 
+    <style>
+        img {
+            width: 145px;
+        }
+
+
+       
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+
+      
+        .counter {
+            font-size: 50px;
+            font-weight: bold;
+            color: rgb(0, 0, 0);
+        }
+        body {
+            background-color: lightblue;
+        }
+        h1 {
+            text-align: center;
+        }
+    </style>
 </head>
 
 
 <body>
+   
+
+    <div id="tavoloDaGioco"></div>
 
 
-    <img src="retro.jpg" onclick="gira()" />
-    <img class="card" src="retro.jpg" onclick="gira2()" />
-
-
+   
+    
+    <div class="container">
+        <span class="counter">Punti =</span>&nbsp&nbsp<span id="counter" class="counter">0</span>
+    </div>
 
 
     <script>
-        let carta = document.querySelector("img")
-
-
-        function gira() {
-            if (carta.src.includes('retro'))
-                carta.src = "fronte.jpg"
-            else
-                carta.src = "retro.jpg"
-        }
        
-        let card = document.querySelector(".card")
+        carte = ["fronte.jpg", "fronte.jpg", "fronte 2.jpg", "fronte 2.jpg"]
+
+     
+        let NcarteGirate = 0;
+        let primaCartaGirata = null
+        tavolo = document.querySelector('#tavoloDaGioco')
 
 
-        function gira2() {
-            if (card.src.includes('retro'))
-                card.src = "https://www.denofgeek.com/wp-content/uploads/2021/07/afr-23-loyal-warhound.jpg"
-            else
-                card.src = "retro.jpg"
+       
+        var counter = document.getElementById("counter");
+
+
+      
+        var count = 0;
+
+
+       
+        carte.sort(() => Math.random() - 0.5);
+
+
+       
+        carte.forEach(element => {
+            tavolo.innerHTML += '<img id="' + element + '" src="retro.jpg" onclick="gira(this)" />'
+            console.log('<img id="' + element + '" src=retro.jpg" />')
+        });
+
+
+        
+        function gira(carta) {
+            NcarteGirate++
+            console.log(NcarteGirate)
+            carta.src = carta.id
+            if (NcarteGirate == 1)
+                primaCartaGirata = carta
+            else {
+                NcarteGirate = 0
+                if (carta.src == primaCartaGirata.src) {
+                    
+                    count++;
+                
+                    counter.textContent = count;
+                } else {
+                    
+                    setTimeout(function() {
+
+                        carta.src = "retro.jpg";
+                        primaCartaGirata.src = "retro.jpg";
+                    }, 1000);
+                }
+            }
+            counter.textContent = count;
+            if (count == 2) {
+            var h1 = document.createElement("h1");
+            h1.textContent = "Bravo hai vinto!";
+            document.body.appendChild(h1);
+            }
         }
-
-
-
-
-
-
     </script>
-
-
 </body>
 
 
 </html>
-
