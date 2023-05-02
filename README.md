@@ -1,6 +1,15 @@
 # cardgame
 javascript tutorial 
 
-lorenzo rosmino 
-in questo documento web ci sono 2 carte di megik che se cliccate ruotano 
-le regole del gioco sono semplici se le carte cliccate sono uguali viene aggiunto un punto al punteggio del giocatore se le carte ruotete sono errate nella console viene dato un avviso di errorore  il punteggio viene mostrato sullo schermo 
+
+Lorenzo Rosmino
+in this web document there are 2 magic cards that rotate if you click
+the rules of the game are simple if the clicked cards are the same a point is added to the player's score if the rotated cards are incorrect an error warning is given in the console the score is shown on the screen.
+
+GitHub - lorenzorosmino/cardgame: javascript tutorial
+https://github.com/lorenzorosmino/cardgame
+
+
+on this link it will be possible to access my github to be able to view the code and images that I used to create this video game
+
+
